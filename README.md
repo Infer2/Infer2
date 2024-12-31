@@ -9,6 +9,11 @@
    <tr>
 	   <td><img src="./metrics.plugin.graph.svg" alt="graph" /></td> 
    </tr>
+<tr>
+	<td>
+		<img src="./metrics.plugin.code.rand.svg" alt="rand" />
+	</td>
+</tr>
  </table>
 </div>
 <!-- uwuu -->
