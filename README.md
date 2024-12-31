@@ -1,7 +1,7 @@
 <div align="center">
  <table>
    <tr>
-     <td rowspan=2> <img src="[./metrics.classic.svg](https://raw.githubusercontent.com/Infer2/Infer2/main/github-metrics.svg)" alt="classic" /> </td>
+     <td rowspan=2> <img src="./github-metrics.svg" alt="classic" /> </td>
      <td> 
 	     <img src="./metrics.plugin.isocalendar.fullyear.svg" alt="fullyear" /> 
      </td>
