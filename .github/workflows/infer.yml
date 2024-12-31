@@ -42,6 +42,7 @@ jobs:
           filename: metrics.plugin.graph.svg
           token: ${{ secrets.METRICS_TOKEN }}
           plugin_habits: yes
+          base: ""
           plugin_habits_charts: commits, code
           plugin_habits_charts_type: graph
           plugin_habits_charts_days: yes
