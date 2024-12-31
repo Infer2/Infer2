@@ -11,7 +11,7 @@
    </tr>
 <tr>
 	<td>
-		<img src="./metrics.plugin.code.rand.svg" alt="rand" />
+		<img src="./metrics.spoti.svg" alt="spoti" />
 	</td>
 </tr>
  </table>
