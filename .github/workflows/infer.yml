@@ -33,7 +33,11 @@ jobs:
         with:
           filename: metrics.plugin.isocalendar.fullyear.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
+          template: repository
+          user: MeteorDevelopment
+          repo: meteor-client
+          plugin_lines: yes
+          plugin_followup: yes
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
       - name: graph
@@ -47,12 +51,6 @@ jobs:
           plugin_habits_charts_type: graph
           plugin_habits_facts: no
           plugin_habits_trim: yes
-          template: repository
-          user: MeteorDevelopment
-          repo: meteor-client
-          plugin_lines: yes
-          plugin_followup: yes
-          plugin_projects: yes
       - name: Spotify - Top tracks
         uses: lowlighter/metrics@latest
         with:
