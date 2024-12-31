@@ -2,20 +2,20 @@
   <table>
     <tr>
       <td rowspan=2>
-        <img src="./github-metrics.svg" alt="classic" />
+        <img src="./uwu/github-metrics.svg" alt="classic" />
       </td>
       <td>
-        <img src="./metrics.plugin.isocalendar.fullyear.svg" alt="fullyear" />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="./metrics.plugin.graph.svg" alt="graph" />
+        <img src="./uwu/metrics.plugin.isocalendar.fullyear.svg" alt="fullyear" />
       </td>
     </tr>
     <tr>
       <td>
-        <img src="./metrics.spoti.svg" alt="spoti" />
+        <img src="./uwu/metrics.plugin.graph.svg" alt="graph" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="./uwu/metrics.spoti.svg" alt="spoti" />
       </td>
       <td>
         <a href="https://discord.com/users/762574927487303691">
