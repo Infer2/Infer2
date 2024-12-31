@@ -48,8 +48,8 @@ jobs:
           plugin_habits_facts: no
           plugin_habits_trim: yes
           template: repository
-          user: Infer2
-          repo: MeteorDevelopment/meteor-client
+          user: MeteorDevelopment
+          repo: meteor-client
           plugin_lines: yes
           plugin_followup: yes
           plugin_projects: yes
