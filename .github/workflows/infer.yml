@@ -7,7 +7,7 @@ on:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    environment: 
+    environment:
       name: production
     permissions:
       contents: write
@@ -43,8 +43,6 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_habits: yes
-          plugin_habits_charts: commits, code
+          plugin_habits_charts: commits
           plugin_habits_charts_type: graph
-          plugin_habits_charts_days: yes
-          plugin_habits_charts_hours: yes
-          plugin_habits_ignored: recent
+          plugin_habits_trim: yes
