@@ -52,6 +52,7 @@ jobs:
           filename: metrics.plugin.code.rand.svg
           token: ${{ secrets.METRICS_TOKEN }}
           plugin_code: yes
+          base: ""
           plugin_code_lines: 12
           plugin_code_load: 400
           plugin_code_days: 30
