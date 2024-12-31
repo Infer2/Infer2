@@ -28,9 +28,6 @@ jobs:
           plugin_activity_filter: all
           plugin_activity_limit: 1
           plugin_activity_load: 300
-          plugin_activity_visibility: all
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
           plugin_lines: yes
           plugin_lines_history_limit: 1
           plugin_lines_repositories_limit: 4
@@ -42,7 +39,6 @@ jobs:
           plugin_repositories_order:  pinned, starred, random
           plugin_stars: yes
           plugin_stars_limit: 4
-          repositories_forks: yes
       - name: Full-year calendar
         uses: lowlighter/metrics@latest
         with:
