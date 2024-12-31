@@ -20,9 +20,6 @@ jobs:
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Rangoon
-          plugin_notable: yes
-          plugin_notable_from: organization
-          plugin_notable_types: commit
           plugin_repositories: yes
           plugin_repositories_featured: MeteorDevelopment/meteor-client
           plugin_repositories_order: pinned, starred
@@ -39,6 +36,14 @@ jobs:
           repo: meteor-client
           plugin_lines: yes
           plugin_followup: yes
+      - name: notable
+        uses: lowlighter/metrics@latest
+        with:
+          filename: uwu/metrics.notable.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          plugin_notable: yes
+          plugin_notable_from: organization
+          plugin_notable_types: commit
       - name: calendar
         uses: lowlighter/metrics@latest
         with:
