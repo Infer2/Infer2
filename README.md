@@ -2,7 +2,7 @@
   <table>
     <tr>
       <td rowspan=2>
-        <img src="./uwu/github-metrics.svg" alt="classic" />
+        <img src="./uwu/metrics.classic.svg" alt="classic" />
       </td>
       <td>
         <img src="./uwu/metrics.plugin.isocalendar.fullyear.svg" alt="fullyear" />
