@@ -28,16 +28,22 @@ jobs:
           plugin_stars: yes
           plugin_stars_limit: 4
           repositories_forks: yes
-      - name: Full-year calendar
+      - name: meteor
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.isocalendar.fullyear.svg
+          filename: metrics.meteor.svg
           token: ${{ secrets.METRICS_TOKEN }}
           template: repository
           user: MeteorDevelopment
           repo: meteor-client
           plugin_lines: yes
           plugin_followup: yes
+      - name: calendar
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.isocalendar.fullyear.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ''
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
       - name: graph
