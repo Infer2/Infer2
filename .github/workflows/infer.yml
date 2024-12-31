@@ -39,6 +39,7 @@ jobs:
       - name: notable
         uses: lowlighter/metrics@latest
         with:
+          base: ''
           filename: uwu/metrics.notable.svg
           token: ${{ secrets.METRICS_TOKEN }}
           plugin_notable: yes
