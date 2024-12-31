@@ -20,7 +20,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           user: Infer2
           template: classic
-          base: header, activity, repositories, metadata
+          base: header, activity, community, repositories, metadata
           base_indepth: yes
           config_timezone: Asia/Rangoon
           plugin_activity: yes
@@ -29,13 +29,6 @@ jobs:
           plugin_activity_limit: 1
           plugin_activity_load: 300
           plugin_activity_visibility: all
-          plugin_habits: yes
-          plugin_habits_charts_type: graph
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_habits_from: 200
-          plugin_habits_languages_limit: 8
-          plugin_habits_languages_threshold: 0%
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
           plugin_lines: yes
@@ -50,3 +43,11 @@ jobs:
           plugin_stars: yes
           plugin_stars_limit: 4
           repositories_forks: yes
+      - name: Full-year calendar
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.isocalendar.fullyear.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
