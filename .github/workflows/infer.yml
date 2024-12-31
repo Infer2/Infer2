@@ -7,7 +7,7 @@ on:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    environment:
+    environment: 
       name: production
     permissions:
       contents: write
@@ -45,4 +45,4 @@ jobs:
           plugin_habits: yes
           plugin_habits_charts: commits
           plugin_habits_charts_type: graph
-          plugin_habits_trim: yes
+          plugin_habits_facts: no
