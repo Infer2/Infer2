@@ -22,7 +22,8 @@ jobs:
           plugin_notable: yes
           plugin_notable_from: organization
           plugin_notable_types: commit
-          plugin_repositories: MeteorDevelopment/meteor-client
+          plugin_repositories: yes
+          plugin_repositories_featured: MeteorDevelopment/meteor-client
           plugin_repositories_order: pinned, starred
           plugin_stars: yes
           plugin_stars_limit: 4
