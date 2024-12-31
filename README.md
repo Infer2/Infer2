@@ -7,7 +7,7 @@
      </td>
    </tr>
    <tr>
-	   <td><img src="./metrics.plugin.languages.svg" alt="to do" /></td> 
+	   <td><img src="./metrics.plugin.graph.svg" alt="graph" /></td> 
    </tr>
  </table>
 </div>
