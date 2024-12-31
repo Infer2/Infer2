@@ -24,7 +24,6 @@ jobs:
           plugin_notable_types: commit
           plugin_repositories: yes
           plugin_repositories_order: pinned, starred
-          plugin_repositories_featured: no
           plugin_stars: yes
           plugin_stars_limit: 4
           repositories_forks: yes
