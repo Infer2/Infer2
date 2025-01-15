@@ -33,4 +33,9 @@
     </tbody>
   </table>
 </div>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Infer2/Infer2/uwu/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Infer2/Infer2/uwu/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/Infer2/Infer2/uwu/github-snake.svg" />
+</picture>
 <!-- uwuu -->
