@@ -11,7 +11,7 @@
       </tr>
       <tr>
         <th>
-          <img src="./uwu/metrics.meteor.svg" alt="fullyear" />
+          <img src="./uwu/metrics.deepseek.svg" alt="fullyear" />
         </th>
       </tr>
       <tr>
