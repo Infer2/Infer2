@@ -6,12 +6,12 @@
           <img src="./uwu/metrics.classic.svg" alt="classic" />
         </th>
         <th>
-          <img src="./uwu/metrics.meteor.svg" alt="fullyear" />
+          <img src="./uwu/metrics.meteor.svg" alt="meteor" />
         </th>
       </tr>
       <tr>
         <th>
-          <img src="./uwu/metrics.deepseek.svg" alt="fullyear" />
+          <img src="./uwu/metrics.deepseek.svg" alt="deepseek" />
         </th>
       </tr>
       <tr>
