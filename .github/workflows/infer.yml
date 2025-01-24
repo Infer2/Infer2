@@ -36,6 +36,16 @@ jobs:
           repo: meteor-client
           plugin_lines: yes
           plugin_followup: yes
+      - name: deepseek
+        uses: lowlighter/metrics@latest
+        with:
+          filename: uwu/metrics.deepseek.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          template: repository
+          user: deepseek-ai
+          repo: awesome-deepseek-integration
+          plugin_lines: yes
+          plugin_followup: yes
       - name: notable
         uses: lowlighter/metrics@latest
         with:
