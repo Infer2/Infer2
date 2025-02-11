@@ -384,7 +384,7 @@
                                         <span>starred 17 days ago</span>
                                     </div>
                                 </div>
-                                <div class="field description">A free mixin-based injection hacked client for Minecraft using the Fabric API</div>
+                                <div class="field description">A free Minecraft hacked client (utility mod) for Fabric</div>
                                 <div class="field infos">
                                     <div class="language">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -484,7 +484,7 @@
             </section>
             <footer>
                 <span>These metrics include private contributions</span>
-                <span>Last updated 11 Feb 2025, 08:17:24 (timezone Asia/Rangoon) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 11 Feb 2025, 13:01:55 (timezone Asia/Rangoon) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
