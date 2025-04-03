@@ -46,15 +46,6 @@ jobs:
           repo: awesome-deepseek-integration
           plugin_lines: yes
           plugin_followup: yes
-      - name: notable
-        uses: lowlighter/metrics@latest
-        with:
-          base: ""
-          filename: uwu/metrics.notable.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          plugin_notable: yes
-          plugin_notable_from: organization
-          plugin_notable_types: commit
       - name: calendar
         uses: lowlighter/metrics@latest
         with:
