@@ -43,7 +43,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           template: repository
           user: deepseek-ai
-          repo: awesome-deepseek-integration
+          repo: DeepGEMM
           plugin_lines: yes
           plugin_followup: yes
       - name: calendar
