@@ -32,10 +32,4 @@
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Infer2/Infer2/uwu/github-snake.svg" />
   <img alt="github-snake" src="https://raw.githubusercontent.com/Infer2/Infer2/uwu/github-snake.svg" />
 </picture>
-<h3>📱 Mobile OS Market Share (2024–2025)</h3>
-<img src="./uwu/mobile.png" alt="Mobile OS Market Share" width="1000" />
-
-<h3>🖥️ Desktop OS Market Share (2024–2025)</h3>
-<img src="./uwu/desktop.png" alt="Desktop OS Market Share" width="1000" />
-
 <!-- uwuu --/>
