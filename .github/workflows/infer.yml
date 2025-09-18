@@ -5,6 +5,42 @@ on:
   workflow_dispatch:
   push: { branches: ["master", "main"] }
 jobs:
+  generate-svg:
+    permissions:
+      contents: write # Required to commit changes
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate SVG
+        uses: cyprieng/github-breakout@v1.0.0
+        with:
+          github_username: ${{ github.repository_owner }}
+
+      - name: Move and modify generated SVGs to red
+        run: |
+          mkdir -p images
+          mv output/light.svg images/breakout-light.svg
+          mv output/dark.svg images/breakout-dark.svg
+          # Replace all fill and stroke colors with red (#FF0000)
+          sed -i 's/fill="[a-zA-Z0-9#]*"/fill="#FF0000"/g' images/breakout-light.svg
+          sed -i 's/stroke="[a-zA-Z0-9#]*"/stroke="#FF0000"/g' images/breakout-light.svg
+          sed -i 's/fill="[a-zA-Z0-9#]*"/fill="#FF0000"/g' images/breakout-dark.svg
+          sed -i 's/stroke="[a-zA-Z0-9#]*"/stroke="#FF0000"/g' images/breakout-dark.svg
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push SVGs
+        run: |
+          git add images/breakout-light.svg images/breakout-dark.svg
+          git commit -m "chore: update breakout SVGs with red color" || echo "No changes to commit"
+          git push
   github-metrics:
     runs-on: ubuntu-latest
     environment:
