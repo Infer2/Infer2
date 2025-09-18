@@ -15,21 +15,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Debug Token Availability
-        run: |
-          echo "METRICS_TOKEN length: ${#METRICS_TOKEN}"
-          echo "GITHUB_TOKEN set to: ${GITHUB_TOKEN:0:5}..."  # Partial token for safety
-        env:
-          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
-
       - name: Generate SVG
         uses: cyprieng/github-breakout@v1
         with:
-          github_username: ${{ github.repository_owner }}
-          github_token: ${{ secrets.METRICS_TOKEN }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
 
       - name: Move generated SVGs to temp
