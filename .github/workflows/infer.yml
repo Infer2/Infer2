@@ -18,8 +18,8 @@ jobs:
       - name: generate SVG
         uses: cyprieng/github-breakout@v1
         with:
-          github_username: Infer2
-          github_token: ${{ secrets.METRICS_TOKEN }}
+          github_username: ${{ github.repository_owner }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Move generated SVGs to temp
         run: |
