@@ -7,7 +7,7 @@ on:
 jobs:
   generate-svg:
     permissions:
-      contents: write # Required to commit changes
+      contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
@@ -15,32 +15,32 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate SVG
-        uses: cyprieng/github-breakout@v1.0.0
+      - name: generate SVG
+        uses: cyprieng/github-breakout@v1
         with:
           github_username: ${{ github.repository_owner }}
 
-      - name: Move and modify generated SVGs to red
+      - name: Move generated SVGs to temp
         run: |
-          mkdir -p images
-          mv output/light.svg images/breakout-light.svg
-          mv output/dark.svg images/breakout-dark.svg
-          # Replace all fill and stroke colors with red (#FF0000)
-          sed -i 's/fill="[a-zA-Z0-9#]*"/fill="#FF0000"/g' images/breakout-light.svg
-          sed -i 's/stroke="[a-zA-Z0-9#]*"/stroke="#FF0000"/g' images/breakout-light.svg
-          sed -i 's/fill="[a-zA-Z0-9#]*"/fill="#FF0000"/g' images/breakout-dark.svg
-          sed -i 's/stroke="[a-zA-Z0-9#]*"/stroke="#FF0000"/g' images/breakout-dark.svg
+          mkdir -p /tmp/breakout-images
+          mv output/light.svg /tmp/breakout-images/breakout-light.svg
+          mv output/dark.svg /tmp/breakout-images/breakout-dark.svg
 
       - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit and push SVGs
+      - name: Commit and force-push SVGs to target branch
         run: |
-          git add images/breakout-light.svg images/breakout-dark.svg
-          git commit -m "chore: update breakout SVGs with red color" || echo "No changes to commit"
-          git push
+          git checkout --orphan github-breakout
+          git rm -rf .
+          mkdir images
+          mv /tmp/breakout-images/* images/
+          git add images
+          git commit -m "chore: update GitHub breakout SVGs" || echo "No changes to commit"
+          git push --force origin github-breakout
+
   github-metrics:
     runs-on: ubuntu-latest
     environment:
