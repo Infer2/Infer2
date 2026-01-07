@@ -68,14 +68,14 @@ jobs:
           repo: meteor-client
           plugin_lines: yes
           plugin_followup: yes
-      - name: deepseek
+      - name: kernalsu
         uses: lowlighter/metrics@latest
         with:
-          filename: uwu/metrics.deepseek.svg
+          filename: uwu/metrics.kernalsu.svg
           token: ${{ secrets.METRICS_TOKEN }}
           template: repository
-          user: deepseek-ai
-          repo: DeepGEMM
+          user: tiann
+          repo: KernalSU
           plugin_lines: yes
           plugin_followup: yes
       - name: calendar
