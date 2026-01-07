@@ -43,7 +43,7 @@
   />
 </picture>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Infer2/<repo-name>/github-breakout/images/breakout-dark.svg">
-  <img src="https://raw.githubusercontent.com/Infer2/<repo-name>/github-breakout/images/breakout-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Infer2/<repo-name>/images/breakout-dark.svg">
+  <img src="https://raw.githubusercontent.com/Infer2/<repo-name>/images/breakout-light.svg">
 </picture>
 <!-- uwuu --/>
