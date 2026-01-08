@@ -11,7 +11,7 @@
       </tr>
       <tr>
         <th>
-          <img src="./uwu/metrics.deepseek.svg" alt="deepseek" />
+          <img src="./uwu/metrics.kernalsu.svg" alt="deepseek" />
         </th>
       </tr>
       <tr>
