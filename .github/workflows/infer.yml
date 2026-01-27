@@ -109,8 +109,8 @@
                     github_token: "${{ secrets.GITHUB_TOKEN }}",
                     enable_ghost_bricks: false,
                     output_path: uwu/breakout.svg,
-                    ball_color: grey,
-                    bricks_colors: red,
+                    ball_color: "#808080",
+                    bricks_colors: "#FF0000"
                   },
               },
               {
