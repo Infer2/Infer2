@@ -1,18 +1,24 @@
 name: Metrics
+
 on:
-  # Schedule updates (every 6 hours)
-  schedule: [{ cron: "0 */6 * * *" }]
+  schedule:
+    - cron: "0 */6 * * *"
   workflow_dispatch:
-  push: { branches: ["master", "main"] }
+  push:
+    branches: ["master", "main"]
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    environment:
-      name: production
     permissions:
       contents: write
+
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Metrics classic
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           filename: uwu/metrics.classic.svg
@@ -26,86 +32,74 @@ jobs:
           plugin_stars: yes
           plugin_stars_limit: 4
           repositories_forks: yes
-      - name: meteor
+
+      - name: Metrics meteor
         uses: lowlighter/metrics@latest
         with:
-          filename: uwu/metrics.meteor.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          filename: uwu/metrics.meteor.svg
           template: repository
           user: MeteorDevelopment
           repo: meteor-client
           plugin_lines: yes
           plugin_followup: yes
-      - name: kernalsu
+
+      - name: Metrics kernelsu
         uses: lowlighter/metrics@latest
         with:
-          filename: uwu/metrics.kernalsu.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          filename: uwu/metrics.kernalsu.svg
           template: repository
           user: tiann
           repo: KernelSU
           plugin_lines: yes
           plugin_followup: yes
-      - name: calendar
+
+      - name: Metrics calendar
         uses: lowlighter/metrics@latest
         with:
-          filename: uwu/metrics.plugin.isocalendar.fullyear.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          filename: uwu/metrics.plugin.isocalendar.fullyear.svg
           base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
-      - name: graph
+
+      - name: Metrics graph
         uses: lowlighter/metrics@latest
         with:
-          filename: uwu/metrics.plugin.graph.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          filename: uwu/metrics.plugin.graph.svg
           base: ""
           plugin_habits: yes
           plugin_habits_charts: uwu
           plugin_habits_charts_type: graph
           plugin_habits_facts: no
           plugin_habits_trim: yes
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Generate GitHub Contributions Snake Animations
+
+      - name: Generate snake
         uses: Platane/snk@v3
         with:
-          github_user_name: ${{ github.repository_owner }}
+          github_user_name: Infer2
           outputs: |
             uwu/github-snake.svg
             uwu/github-snake-dark.svg?palette=github-dark
-            uwu/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy to Output Branch
+
+      - name: Generate breakout
+        uses: cyprieng/github-breakout@v1
+        with:
+          github_username: Infer2
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          enable_ghost_bricks: false
+          output_path: uwu/breakout.svg
+          ball_color: grey
+          bricks_colors: red
+
+      - name: Publish assets
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./uwu
           publish_branch: uwu
-          commit_message: "Update snake animation [skip ci]"
-      - name: Generate breakout SVGs
-        uses: cyprieng/github-breakout@v1
-        with:
-          github_username: ${{ github.repository_owner }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          enable_ghost_bricks: false
-          output_path: uwu/breakout-dark.svg
-          ball_color: grey
-          bricks_colors: red
-
-      - name: Configure git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Switch to orphan github-breakout branch
-        run: |
-          git checkout --orphan github-breakout
-          git rm -rf .
-
-      - name: Commit and push breakout assets
-        run: |
-          git add uwu
-          git commit -m "chore: update GitHub breakout SVGs" || echo "No changes to commit"
-          git push --force origin github-breakout
+          commit_message: "Update profile assets"
