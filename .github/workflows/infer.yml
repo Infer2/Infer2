@@ -88,11 +88,11 @@ jobs:
         uses: cyprieng/github-breakout@v1
         with:
           github_username: ${{ github.repository_owner }}
-          outputs: |
-            uwu/breakout.svg
-            uwu/breakout-dark.svg?palette=github-dark
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          enable_ghost_bricks: false
+          output_path: uwu/breakout-dark.svg
+          ball_color: grey
+          bricks_colors: red
 
       - name: Configure git
         run: |
