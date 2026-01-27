@@ -99,9 +99,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit and push to github-breakout branch
+      - name: Switch to orphan github-breakout branch
         run: |
           git checkout --orphan github-breakout
-          git add images
+          git rm -rf .
+
+      - name: Commit and push breakout assets
+        run: |
+          git add uwu
           git commit -m "chore: update GitHub breakout SVGs" || echo "No changes to commit"
           git push --force origin github-breakout
